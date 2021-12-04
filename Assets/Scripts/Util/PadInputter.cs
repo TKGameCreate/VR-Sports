@@ -11,7 +11,7 @@ namespace Inputter
         Hold
     }
 
-    public class PadInputter
+    public static class PadInputter
     {
         private static Dictionary<PadCode, string> s_button = new Dictionary<PadCode, string>()
         {
@@ -29,35 +29,35 @@ namespace Inputter
             { PadCode.RightArrow, "RightArrow" }
         };
 
-        public static Vector2 RightStick()
+        public static Vector2 RightStickAxis()
         {
             var horizontal = Input.GetAxis("Horizontal2");
             var vertical = Input.GetAxis("Vertical2");
             return new Vector2(horizontal, vertical);
         }
 
-        public static Vector2 LeftStick()
+        public static Vector2 LeftStickAxis()
         {
             var horizontal = Input.GetAxis("Horizontal");
             var vertical = Input.GetAxis("Vertical");
             return new Vector2(horizontal, vertical);
         }
 
-        public static Vector2 RightStickRaw()
+        public static Vector2 RightStickAxisRaw()
         {
             var horizontal = Input.GetAxisRaw("Horizontal2");
             var vertical = Input.GetAxisRaw("Vertical2");
             return new Vector2(horizontal, vertical);
         }
 
-        public static Vector2 LeftStickRaw()
+        public static Vector2 LeftStickAxisRaw()
         {
             var horizontal = Input.GetAxisRaw("Horizontal");
             var vertical = Input.GetAxisRaw("Vertical");
             return new Vector2(horizontal, vertical);
         }
 
-        public static bool CheckInput(PadCode code, InputType type)
+        public static bool CheckInputButton(PadCode code, InputType type)
         {
             string name;
             var success = s_button.TryGetValue(code, out name);

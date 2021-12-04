@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JyroInputter : MonoBehaviour
+namespace Inputter
 {
-    // Start is called before the first frame update
-    void Start()
+    public static class JyroInputter
     {
-        
-    }
+        public static Quaternion Jyro()
+        {
+            EnableJyro(true);
+            return Input.gyro.attitude;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public static Vector3 JyroEuler()
+        {
+            EnableJyro(true);
+            return Input.gyro.attitude.eulerAngles;
+        }
+
+        private static void EnableJyro(bool enable)
+        {
+            if (Input.gyro.enabled == enable) return;
+            Input.gyro.enabled = enable;
+        }
     }
 }
