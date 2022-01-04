@@ -28,32 +28,36 @@ namespace Inputter
             { PadCode.LeftArrow, "LeftArrow" },
             { PadCode.RightArrow, "RightArrow" }
         };
+        private const string RIGHT_HORIZONTAL = "Horizontal2";
+        private const string RIGHT_VERTICAL = "Vertical2";
+        private const string LEFT_HORIZONTAL = "Horizontal";
+        private const string LEFT_VERTICAL = "Vertical";
 
         public static Vector2 RightStickAxis()
         {
-            var horizontal = Input.GetAxis("Horizontal2");
-            var vertical = Input.GetAxis("Vertical2");
+            var horizontal = Input.GetAxis(RIGHT_HORIZONTAL);
+            var vertical = Input.GetAxis(RIGHT_VERTICAL);
             return new Vector2(horizontal, vertical);
         }
 
         public static Vector2 LeftStickAxis()
         {
-            var horizontal = Input.GetAxis("Horizontal");
-            var vertical = Input.GetAxis("Vertical");
+            var horizontal = Input.GetAxis(LEFT_HORIZONTAL);
+            var vertical = Input.GetAxis(LEFT_VERTICAL);
             return new Vector2(horizontal, vertical);
         }
 
         public static Vector2 RightStickAxisRaw()
         {
-            var horizontal = Input.GetAxisRaw("Horizontal2");
-            var vertical = Input.GetAxisRaw("Vertical2");
+            var horizontal = Input.GetAxisRaw(RIGHT_HORIZONTAL);
+            var vertical = Input.GetAxisRaw(RIGHT_VERTICAL);
             return new Vector2(horizontal, vertical);
         }
 
         public static Vector2 LeftStickAxisRaw()
         {
-            var horizontal = Input.GetAxisRaw("Horizontal");
-            var vertical = Input.GetAxisRaw("Vertical");
+            var horizontal = Input.GetAxisRaw(LEFT_HORIZONTAL);
+            var vertical = Input.GetAxisRaw(LEFT_VERTICAL);
             return new Vector2(horizontal, vertical);
         }
 

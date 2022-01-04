@@ -7,8 +7,10 @@ public class VRCamera : MonoBehaviour
 {
     void Update()
     {
+#if !UNITY_EDITOR
         MoveGyro();
         ResetGyro();
+#endif
     }
 
     void MoveGyro()
